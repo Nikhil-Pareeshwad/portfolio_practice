@@ -1,122 +1,99 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const skills = [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "React",
+    "Node.js",
+    "MongoDB"
+  ];
+
+  const projects = [
+    {
+      title: "Attendance Management System",
+      description:
+        "A MERN stack application to manage student attendance."
+    },
+    {
+      title: "Portfolio Website",
+      description:
+        "A personal portfolio showcasing skills and projects."
+    },
+    {
+      title: "Weather App",
+      description:
+        "A React application that displays live weather data."
+    }
+  ];
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
+    <div className="portfolio">
+
+      {/* Hero Section */}
+      <section className="hero">
+        <h1>Nikhil Pareeshwad</h1>
+        <h3>Full Stack Developer</h3>
+        <p>
+          Passionate about building modern web applications
+          using React, Node.js, and MongoDB.
+        </p>
       </section>
 
-      <div className="ticks"></div>
+      {/* About */}
+      <section className="section">
+        <h2>About Me</h2>
+        <p>
+          I am a web developer who enjoys creating responsive
+          and user-friendly applications. I love learning new
+          technologies and solving real-world problems.
+        </p>
+      </section>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
+      {/* Skills */}
+      <section className="section">
+        <h2>Skills</h2>
+
+        <div className="skills">
+          {skills.map((skill, index) => (
+            <div key={index} className="skill-card">
+              {skill}
+            </div>
+          ))}
         </div>
       </section>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+      {/* Projects */}
+      <section className="section">
+        <h2>Projects</h2>
+
+        <div className="projects">
+          {projects.map((project, index) => (
+            <div key={index} className="project-card">
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section className="section">
+        <h2>Contact</h2>
+
+        <p>Email: nikhilpareeshwad@gmail.com</p>
+        <p>Phone: +91 8747068602</p>
+        <p>Location: Tamil Nadu, India</p>
+      </section>
+
+      {/* Footer */}
+      <footer>
+        <p>© 2026 Nikhil Pareeshwad. All Rights Reserved.</p>
+      </footer>
+
+    </div>
+  );
 }
 
-export default App
+export default App;
