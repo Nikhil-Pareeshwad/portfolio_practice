@@ -5,39 +5,42 @@ function App() {
     "HTML",
     "CSS",
     "JavaScript",
-    "React",
+    "React.js",
     "Node.js",
-    "MongoDB"
+    "Express.js",
+    "MongoDB Atlas"
   ];
 
   const projects = [
     {
       title: "Attendance Management System",
       description:
-        "A MERN stack application to manage student attendance."
+        "A full-stack MERN application that stores daily student attendance in MongoDB Atlas. Built using React.js, Node.js, Express.js, HTML, CSS, and JavaScript.",
+      link: "https://attendance-system-kec-frontend.onrender.com"
     },
     {
       title: "Portfolio Website",
       description:
-        "A personal portfolio showcasing skills and projects."
+        "A personal portfolio showcasing skills, projects, and contact information.",
+      link: "#"
     },
     {
       title: "Weather App",
       description:
-        "A React application that displays live weather data."
+        "A React application that displays live weather information using a weather API.",
+      link: "#"
     }
   ];
 
   return (
     <div className="portfolio">
-
       {/* Hero Section */}
       <section className="hero">
         <h1>Nikhil Pareeshwad</h1>
         <h3>Full Stack Developer</h3>
         <p>
-          Passionate about building modern web applications
-          using React, Node.js, and MongoDB.
+          Passionate about building modern web applications using
+          React.js, Node.js, Express.js, and MongoDB Atlas.
         </p>
       </section>
 
@@ -45,8 +48,8 @@ function App() {
       <section className="section">
         <h2>About Me</h2>
         <p>
-          I am a web developer who enjoys creating responsive
-          and user-friendly applications. I love learning new
+          I am a Full Stack Developer who enjoys creating responsive
+          and user-friendly web applications. I love learning new
           technologies and solving real-world problems.
         </p>
       </section>
@@ -73,6 +76,17 @@ function App() {
             <div key={index} className="project-card">
               <h3>{project.title}</h3>
               <p>{project.description}</p>
+
+              {project.link !== "#" && (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-btn"
+                >
+                  View Live Project
+                </a>
+              )}
             </div>
           ))}
         </div>
@@ -91,7 +105,6 @@ function App() {
       <footer>
         <p>© 2026 Nikhil Pareeshwad. All Rights Reserved.</p>
       </footer>
-
     </div>
   );
 }
